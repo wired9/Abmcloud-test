@@ -11,28 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_160_708_033_507) do
+ActiveRecord::Schema.define(version: 20160708033507) do
+
   # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+  enable_extension "plpgsql"
 
-  create_table 'skus', force: :cascade do |t|
-    t.integer  'supplier_id'
-    t.float    'price'
-    t.string   'property_1'
-    t.string   'property_2'
-    t.string   'property_3'
-    t.string   'property_4'
-    t.string   'property_5'
-    t.string   'property_6'
-    t.datetime 'created_at',  null: false
-    t.datetime 'updated_at',  null: false
+  create_table "skus", force: :cascade do |t|
+    t.integer  "supplier_id"
+    t.float    "price"
+    t.string   "property_1"
+    t.string   "property_2"
+    t.string   "property_3"
+    t.string   "property_4"
+    t.string   "property_5"
+    t.string   "property_6"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
-  add_index 'skus', ['supplier_id'], name: 'index_skus_on_supplier_id', using: :btree
+  add_index "skus", ["supplier_id"], name: "index_skus_on_supplier_id", using: :btree
 
-  create_table 'suppliers', force: :cascade do |t|
-    t.string   'name'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
+  create_table "suppliers", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
+
 end

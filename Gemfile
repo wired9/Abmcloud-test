@@ -25,11 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Resque as ActiveJob backend
 gem 'resque'
 
-# CSV parser
-gem 'smarter_csv'
-
 gem 'activerecord-import'
-gem 'parallel'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -44,6 +40,8 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'rspec-rails'
+  gem 'database_cleaner'
+  gem 'db-query-matchers'
 end
 
 group :development do
