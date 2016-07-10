@@ -1,0 +1,15 @@
+<h3>SKU</h3>
+<%= paginate @skus %>
+<table class="table">
+  <% @skus.each do |sku| %>
+    <tr>
+      <td><%= sku.id %></td>
+      <td><%= sku.supplier_id %></td>
+      <% (1..6).each do |i| %>
+        <td><%= sku.send("property_#{i}".to_sym) %></td>
+      <% end %>
+      <td><%= sku.price %></td>
+    </tr>
+  <% end %>
+</table>
+<%= paginate @skus %>

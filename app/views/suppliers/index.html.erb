@@ -1,0 +1,11 @@
+<h3>Suppliers</h3>
+<%= paginate @suppliers %>
+<table class="table">
+  <% @suppliers.each do |supplier| %>
+    <tr>
+      <td><%= supplier.id %></td>
+      <td><%= supplier.name %></td>
+    </tr>
+  <% end %>
+</table>
+<%= paginate @suppliers %>

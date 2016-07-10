@@ -7,8 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<div class="container">
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+   <ul class="nav navbar-nav">
+     <li><%= link_to 'Upload', new_upload_path %></li>
+     <li><%= link_to 'SKU', skus_path %></li>
+     <li><%= link_to 'Suppliers', suppliers_path %></li>
+     <li><%= link_to 'Resque-web', '/resque' %></li>
+   </ul>
+  </div><!-- /.container-fluid -->
+</nav>
+<% flash.each do |key, value| %>
+  <div class="alert alert-info" role="alert"><%= value %></div>
+<% end %>
 <%= yield %>
-
+</div>
 </body>
 </html>

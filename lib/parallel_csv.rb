@@ -15,6 +15,8 @@ class ParallelCSV
   end
 
   def process(&block)
+    File.open(path) { }
+
     offset = 0
     reader, writer = IO.pipe
     eof = false
@@ -47,6 +49,11 @@ class ParallelCSV
     options[:chunk_size].times do
       line = csv.readline
       chunk << line.fields if line
+
+      if io.eof?
+        writer.puts 'stop'
+        break
+      end
     end
   rescue
     writer.puts 'stop'
